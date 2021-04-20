@@ -305,7 +305,7 @@ class Ui_MainWindow(object):
 "QCheckBox::indicator:checked {\n"
 "    background: 3px solid rgb(52, 59, 72);\n"
 "    border: 3px solid rgb(52, 59, 72);    \n"
-"    background-image: url(:/16x16/icons/16x16/cil-check-alt.png);\n"
+"    background-image: url(/16x16/icons/16x16/cil-check-alt.png);\n"
 "}\n"
 "\n"
 "/* RADIO BUTTON */\n"
@@ -1319,4 +1319,13 @@ class Ui_MainWindow(object):
         self.label_25.setText(_translate("MainWindow", "ID"))
         self.label_26.setText(_translate("MainWindow", "CONTRASEÑA"))
         self.label_version.setText(_translate("MainWindow", "v1.0.0"))
-import files_rc
+#import files_rc
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.showMaximized()
+    sys.exit(app.exec_())
