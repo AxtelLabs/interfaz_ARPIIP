@@ -1321,6 +1321,17 @@ class Ui_MainWindow(object):
         self.label_version.setText(_translate("MainWindow", "v1.0.0"))
 #import files_rc
 
+class ControlMainWindow(QtGui.QMainWindow):
+    def __init__(self, parent=None):
+        super(ControlMainWindow, self).__init__(parent)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        self.ui.wgtbtnB.clicked.connect(lambda : self.ui.stackedWidget.setCurrentIndex(0))
+        self.ui.wgtMainWindow.clicked.connect(lambda : self.ui.stackedWidget.setCurrentIndex(1))
+        
+        self.ui.wgtMainWindow.clicked.connect(lambda : self.ui.stackedWidget.setCurrentIndex(1))
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
